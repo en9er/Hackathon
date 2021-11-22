@@ -15,8 +15,8 @@ import os
 import apiclient
 from oauth2client.service_account import ServiceAccountCredentials
 import httplib2
-from Hackathon.Google import Create_Service
-from website import GoogleAPI
+#from Hackathon.Google import Create_Service
+#from website import GoogleAPI
 
 AUTH_USER_MODEL = 'client.Client'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -46,7 +46,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 line = 1
-GoogleAPI.Init('1EfI8KyGXglFbbUqfLjzThwGVtiQiWcZJ', '1_QhNMv1zjNtpb4HYVZhUZZWx9_qqRsQ-TqzWiMY3KFY', line)
+#GoogleAPI.Init('1EfI8KyGXglFbbUqfLjzThwGVtiQiWcZJ', '1_QhNMv1zjNtpb4HYVZhUZZWx9_qqRsQ-TqzWiMY3KFY', line)
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

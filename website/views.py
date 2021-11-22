@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, logout
 from Hackathon.settings import BASE_DIR
 from .forms import SendReq
 from django.core.files.storage import FileSystemStorage
-from website import GoogleAPI
+#from website import GoogleAPI
 import os
 
 
