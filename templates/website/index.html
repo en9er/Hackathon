@@ -1,0 +1,45 @@
+{% load static %}
+
+<head>
+    <title>CompenseRequestSystem</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/request.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body> 
+    <div class="grid">
+        <div class="top">
+            <img src="{% static 'res/cloudlinux.svg' %}" width="94px" height="94px">
+            <h3 class="cloudlinux">Cloud Linux</h3>
+        </div>
+        <form name="Form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="form_head">
+                <h2 class="name">{{ fullname }}</h2>
+                <h2 class="email">{{ email }}</h2>
+            </div>
+            <select class="formtext" name="category" aria-placeholder="Category">
+               {% for c in categories %}
+                   <option value="{{ c }}">{{ c }}</option>
+                {% endfor %}
+            </select>
+            <div class="value_input_box">
+                <input class="formtext" name="amount" type="number" placeholder="Value">
+                <select class="formtext" name="currency">
+                    <option value="RUB">RUB</option>
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+            <input class="formtext" name="date" type="date" placeholder="11/11/2021">
+            <div class="form_bottom">
+                <input  id="file-drop" class="dropzone" name="file" type="file">
+                <ul class="file_list">
+                    
+                </ul>
+                <input class="sendbutton" type="submit" value="Send">
+           </div>
+        </form>
+    </div>
+</body> 

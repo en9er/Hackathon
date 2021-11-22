@@ -1,0 +1,26 @@
+{% load static %}
+<head>
+    <title>GoogleAuth</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/authorizestyle.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="authorize">
+{% if user.id %}
+<h2>You are already athorized as {{ user.username }}</h2>
+    <a style="margin-left: 3%; font-size: 24px" href="{% url 'index'%}">Back</a>
+{% else %}
+<a href="accounts/google/login">
+    <div class="authorize_content">
+        <div class="continueBut">
+            <h1>Continue With</h1>
+        </div>
+        <div class="googleicon">
+            <img src="{% static 'res/googleicon.svg' %}"
+            width = "95px" height = "95px">
+        </div>
+    </div>
+</a>
+{% endif %}
+</body>

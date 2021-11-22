@@ -1,0 +1,66 @@
+body
+{
+    background: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+body::-webkit-scrollbar 
+{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+.authorize
+{
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+div.authorize_content
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.googleicon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 4px solid #0C71C3;
+    border-radius: 300px;
+    margin: 50px;
+    padding: 25px;
+}
+
+.continueBut
+{
+    display: inline-block;
+    background-color: #FFFFFF;
+    border: 4px solid #0C71C3;
+    border-radius: 70px;
+}
+.continueBut h1
+{
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 75px;
+    /* identical to box height */
+
+    letter-spacing: 0.025em;
+
+    margin: 33px;
+
+    color: #000000;
+}

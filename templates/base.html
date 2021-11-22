@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%  load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block additional_media1 %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+</head>
+<body>
+{% block head %}
+	{% block logo %}
+        <div class="header flex_centerY">
+            <div class="header_left flex_centerY">
+                <a href="{% url "index" %}" class="header_logo">
+                    Cloud Linux
+                </a>
+            </div>
+        </div>
+	{% endblock %}
+	{% block menu %}{% endblock %}
+{% endblock %}
+
+
+<div class="content flex_centerX">
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+
+{% block footer %}
+	{% block copyright %}
+        <div class="footer flex_centerY">Copyright</div>
+	{% endblock %}
+{% endblock %}
+</body>
+</html>

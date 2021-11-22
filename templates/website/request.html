@@ -1,0 +1,60 @@
+{% load static %}
+<head>
+    <title>CompenseRequestSystem</title>
+    <link rel="stylesheet" type="text/css" href="{% static "website/css/requestsview.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grid">
+        <div class="top">
+            <img src="{% static 'res/cloudlinux.svg' %}" width="94px" height="94px">
+            <h3 class="cloudlinux">Cloud Linux</h3>
+        </div>
+        {% if count != 0 %}
+            <div class="requestview">
+            <div class="requestview_head">
+                <h2 class="name">{{ request.owner.first_name }} {{ request.owner.last_name }}</h2>
+                <h2 class="email">{{ request.owner.email }}</h2>
+            </div>
+            <p class="requestview_text">
+                {{ request.category }}
+            </p>
+            <p class="requestview_text">
+                {{ request.sum }}
+            </p>
+            <p class="requestview_text">
+                {{ request.date }}
+            </p>
+
+            <div class="list">
+                <ul>
+                    <div class="file">
+                        <img src="{% static 'res/downloud.svg' %}">
+                        <a class="filelink" href="../..{{ request.photo }}" target="_blank">file</a>
+                        <img src="{% static 'res/file.svg' %}">
+                    </div>
+
+                </ul>
+            </div>
+
+            <div class="requestview_bottom">
+                <button  class="acceptbutton" type="button">
+                    <a href="{% url 'accrequest' %}" class="button_text">Accept</a>
+                </button>
+
+                <button class="rejectbutton" type="button">
+                    <a href="{% url 'rejrequest'%}" class="button_text">Reject</a>
+                </button>
+           </div>
+          </div>
+            {% else %}
+                <div class="norequests">
+                    <p>There are no requests to proceed</p>
+                </div>
+        {% endif %}
+
+    </div>
+</body>
